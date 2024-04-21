@@ -1,0 +1,157 @@
+<!-- Q1:-Create a simple page with some div tags and show different ways to add CSS as well as what happens
+when you target the same elements with inline, internal, and external CSS. Also, utilize comments in the
+project where required. -->
+
+<h1>Solution of Q1</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Application Examples</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Internal CSS -->
+    <style>
+        /* Internal CSS */
+        .internal-style {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="external-style internal-style">Div 1 - External & Internal CSS</div>
+    <div id="div2" style="color: red; font-weight: normal;">Div 2 - Inline CSS</div>
+    <div id="div3">Div 3 - No Specific Styling</div>
+</body>
+</html>
+
+<!-- 
+Q2:- Build an HTML page with multiple paragraphs, each assigned a unique class name. Write CSS rules using
+class selectors to apply distinct styling to each paragraph. Follow the BEM naming convention and
+explain how you've named the classes. -->
+ <h2>Solution of Q2</h2>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEM Naming Convention Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <p class="paragraph paragraph--intro">This is an introduction paragraph.</p>
+    <p class="paragraph paragraph--main">This is the main content paragraph.</p>
+    <p class="paragraph paragraph--footer">This is a paragraph in the footer.</p>
+</body>
+</html>
+<!-- 
+Q3:- Develop an HTML form with various input elements. Use CSS to style the form, including setting
+background colors for input fields. create a custom color palette for the form elements, and demonstrate
+how to apply opacity to one of the form sections. -->
+<h2>Solution of Q3</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form with CSS</title>
+    
+    <style>
+        
+:root {
+    --primary-color: #ff7f50;
+    --secondary-color: #4682b4;
+    --background-color: #f0f0f0;
+    --form-background-color: #ffffff;
+    --opacity-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Form styling */
+.my-form {
+    margin: 50px auto;
+    padding: 20px;
+    width: 300px;
+    background-color: var(--background-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+}
+
+.form-section {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+input[type="color"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 3px;
+    background-color: var(--form-background-color);
+}
+
+button {
+    padding: 8px 15px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darken(var(--primary-color), 10%); /* Darken the color on hover */
+}
+
+/* Opacity example */
+.opacity-example {
+    background-color: var(--opacity-color); /* Apply opacity to the background color */
+}
+
+    </style>
+</head>
+<body>
+    <form class="my-form">
+        <div class="form-section">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="form-section">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div class="form-section">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div class="form-section">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+        <div class="form-section">
+            <label for="color">Favorite Color:</label>
+            <input type="color" id="color" name="color">
+        </div>
+        <div class="form-section opacity-example">
+            <label for="opacity-example">Opacity Example:</label>
+            <input type="text" id="opacity-example" name="opacity-example">
+        </div>
+        <div class="form-section">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>
